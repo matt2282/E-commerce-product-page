@@ -1,38 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <script defer src="main.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div>
+          <input
+            type="image"
+            src="images/icon-menu.svg"
+            width="75%"
+            height="75%"
+            onclick="openNav()"
+          />
+          <img src="images/logo.svg" />
+        </div>
+        <div style="position: relative">
+          <input
+            type="image"
+            src="images/icon-cart.svg"
+            onclick="document.getElementById('cart-container').classList.toggle('cart-hidden');"
+          />
+          <div id="quantity-bubble"></div>
+          <input type="image" src="images/image-avatar.png" width="25rem" />
+        </div>
+      </header>
+      <main>
+        <div class="image-selector">
+          <div class="image-slider">
+            <img src="images/image-product-1.jpg" />
+            <button id="prev" onclick="pressPrev()"></button>
+            <button id="next" onclick="pressNext()"></button>
+            <div class="thumbnails">
+              <input type="image" src="images/image-product-1-thumbnail.jpg" />
+              <input type="image" src="images/image-product-2-thumbnail.jpg" />
+              <input type="image" src="images/image-product-3-thumbnail.jpg" />
+              <input type="image" src="images/image-product-4-thumbnail.jpg" />
+            </div>
+          </div>
+          
+        </div>
+        <div class="inner-content">
+          <h2>SNEAKER COMPANY</h2>
+          <h1>Fall Limited Edition Sneakers</h1>
+          <p>
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+          <div class="price-tag">
+            <div class="current-price">$125.00</div>
+            <div class="discount">50%</div>
+            <div class="new-line-original-price">
+              <div class="original-price">$250.00</div>
+            </div>
+          </div>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | E-commerce product page</title>
-</head>
-<body>
-  <header>
-    <input type="image" src="images/icon-menu.svg">
-    <img src="images/logo.svg">
-    <input type="image" src="images/icon-cart.svg">
-    <input type="image" src="images/image-avatar.png" width="25rem">
-  </header>
-  Collections
-  Men
-  Women
-  About
-  Contact
+          <div class="quantity-selector">
+            <button class="minus" onclick="pressMinus()">
+              <img src="images/icon-minus.svg" />
+            </button>
 
-  Sneaker Company
+            <input id="quantity" type="number" value="0" min="0" />
 
-  Fall Limited Edition Sneakers
-
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-</body>
+            <button class="plus" onclick="pressPlus()">
+              <img src="images/icon-plus.svg" />
+            </button>
+          </div>
+          <button class="add-to-cart" onclick="pressAddToCart()">
+            <img src="images/icon-cart.svg" /> Add to cart
+          </button>
+        </div>
+        <div class="cart-hidden" id="cart-container">
+          <h2>Cart</h2>
+          <p id="cart-empty" class="cart-empty-hidden">Your cart is empty.</p>
+          <div class="cart-full-hidden" id="cart-full">
+            <div>
+              <img src="images/image-product-1.jpg" />
+              <p>
+                Fall Limited Edition Snakers<br />
+                $125.00 x <span></span> <b></b>
+              </p>
+              <input
+                type="image"
+                src="images/icon-delete.svg"
+                onclick="deleteProduct()"
+              />
+            </div>
+            <button class="checkout">Checkout</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <nav class="close-nav">
+      <input
+        type="image"
+        src="images/icon-close.svg"
+        onclick="closeNav()"
+        onkeypress="alert(1)"
+      />
+      <ul>
+        <li><a href="">Collections</a></li>
+        <li><a href="">Men</a></li>
+        <li><a href="">Women</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+  </body>
 </html>

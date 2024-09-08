@@ -1,0 +1,351 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Kumbh Sans;
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+main {
+  position: relative;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0px;
+}
+header div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.image-slider {
+  position: relative;
+}
+.image-slider img {
+  width: 100%;
+  object-fit: cover;
+  clip-path: inset(40px 0);
+  margin-top: -40px;
+  margin-bottom: -40px;
+}
+#prev {
+  position: absolute;
+  top: 50%;
+  background-image: url(images/icon-previous.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.75rem;
+  width: 45px;
+  height: 45px;
+  left: 2.5%;
+  border: none;
+  padding: 0px;
+  border-radius: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+#next {
+  position: absolute;
+  top: 50%;
+  background-image: url(images/icon-next.svg);
+  width: 45px;
+  height: 45px;
+  right: 2.5%;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.75rem;
+  padding: 0px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.inner-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+h2 {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+h1 {
+  font-weight: 800;
+  margin: 0px;
+}
+p {
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+}
+
+.quantity-selector input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-align: center;
+  font-family: Kumbh Sans;
+  font-weight: 800;
+  color: black;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.price-tag {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 1.5rem;
+}
+.current-price {
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.discount {
+  background-color: black;
+  color: white;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.original-price {
+  text-decoration: line-through;
+  font-weight: 600;
+}
+.new-line-orignal-price {
+}
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  border-radius: 0.5rem;
+  width: auto;
+  background-color: hsl(223, 64%, 98%);
+  font-family: Kumbh Sans;
+  font-weight: 800;
+  padding: 1rem;
+}
+
+.minus,
+.plus {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+.add-to-cart,
+.checkout {
+  font-family: Kumbh Sans;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(26, 100%, 55%);
+  color: black;
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 1rem;
+  gap: 15px;
+  font-weight: 800;
+}
+
+.add-to-cart img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0);
+}
+#cart-container {
+  position: absolute;
+  top: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 95%;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.205);
+}
+#cart-container > div {
+  padding: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+#cart-full div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#cart-full img {
+  width: 60px;
+  height: 60px;
+  border-radius: 0.3rem;
+}
+#cart-full p {
+  padding: 0px;
+  margin: 0px;
+  line-height: 1rem;
+}
+#cart-container h2 {
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0px;
+  padding: 1.25rem;
+  padding-bottom: 2rem;
+}
+
+#cart-container > p {
+  text-align: center;
+  margin: 0px;
+  padding: 5rem;
+  font-weight: 500;
+}
+.cart-hidden,
+.close-nav,
+.cart-empty-hidden,
+.cart-full-hidden,
+.quantity-bubble-hidden {
+  display: none;
+}
+nav {
+  position: absolute;
+  top: 0%;
+  width: 230px;
+  background-color: white;
+  height: 100%;
+  padding: 1rem;
+  left: 0%;
+  margin: 0px;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0px;
+  margin-top: 3rem;
+  padding: 0px;
+  line-height: 3rem;
+  font-weight: 700;
+}
+nav ul a {
+  border: none;
+  background-color: transparent;
+  font-family: Kumbh Sans;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+}
+nav::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 260px);
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+#quantity-bubble {
+  background-color: hsl(26, 100%, 55%);
+  color: white;
+  position: absolute;
+  font-size: 0.6rem;
+  padding: 0rem 0.325rem 0rem 0.325rem;
+  border-radius: 0.75rem;
+  top: 0%;
+  right: 60%;
+}
+.thumbnails {
+  display: none;
+}
+@media screen and (min-width: 770px) {
+  .container {
+    width: 100%;
+    height: 100vh; /* or any other value that fits your design */
+    padding: 0rem;
+    margin: 0px;
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0;
+    height: 100%;
+    overflow: visible;
+  }
+  .image-slider {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    gap: 1.5rem;
+  }
+  .image-slider img {
+    clip-path: none;
+    border-radius: 1rem;
+    margin: 0px;
+  }
+  .image-selector {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    box-sizing: border-box;
+    margin-left: 10rem;
+  }
+  .thumbnails {
+    width: 100%;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    gap: 1.5rem;
+  }
+  .thumbnails input {
+    border-radius: 0.5rem;
+
+    overflow: auto;
+    height: auto;
+  }
+  .inner-content {
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+  }
+  #prev,
+  #next {
+    display: none;
+  }
+  header {
+    border-bottom: solid rgba(128, 128, 128, 0.158) 1px;
+    margin: 2rem 8rem 2rem 8rem;
+  }
+}
